@@ -1,4 +1,4 @@
-## Noyo-app
+## Backend-app with REST API
 
 To get this application running, make sure you do the following in the Terminal:
 
