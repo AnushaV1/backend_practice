@@ -6,7 +6,7 @@ To get this application running, make sure you do the following in the Terminal:
 2. `source venv/bin/activate`
 3. `pip install -r requirements.txt`
 4. `createdb noyo_db_`
-5. `flask run`
+5. `flask run or python app.py`
 
 To test the application
-`createdb noyo_db_test_`
+`createdb noyo_db_test`
