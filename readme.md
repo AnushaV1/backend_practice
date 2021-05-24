@@ -11,3 +11,4 @@ To get this application running, make sure you do the following in the Terminal:
 
 To test the application
 `createdb noyo_db_test`
+`python -m unittest`
