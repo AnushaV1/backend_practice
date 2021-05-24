@@ -1,0 +1,41 @@
+###
+POST http://127.0.0.1:5000/user
+Content-Type: application/json
+
+{
+    "firstname":"Allen",
+    "middlename":"",
+    "lastname":"Peter",
+    "email":"allen@email.com",
+    "age":35,
+    "version_id":1
+}
+
+### Single Read with user id
+GET http://127.0.0.1:5000/user/9
+
+Content-Type: application/json
+
+### Versioned Single Read with user id and version id
+GET http://127.0.0.1:5000/api/2/user/3
+Content-Type: application/json
+
+### Read all
+GET http://127.0.0.1:5000/users
+Content-Type: application/json
+
+### update
+PATCH http://127.0.0.1:5000/user/17
+Content-Type: application/json
+
+{
+"middlename": "Michelle"
+}
+
+###
+DELETE http://127.0.0.1:5000/user/17
+Content-Type: application/json
+
+
+
+
