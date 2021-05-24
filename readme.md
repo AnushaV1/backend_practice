@@ -10,5 +10,5 @@ To get this application running, make sure you do the following in the Terminal:
 6. `flask run or python app.py`
 
 To test the application
-`createdb noyo_db_test`
-`python -m unittest`
+1. `createdb noyo_db_test`
+2. `python -m unittest`
