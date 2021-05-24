@@ -1,5 +1,8 @@
 ## Backend-app with REST API
 
+## Tech Stack
+* ** Python, Flask, SQLAlchemy, PostgreSQL, JSON **
+
 To get this application running, make sure you do the following in the Terminal:
 
 1. `python3 -m venv venv`
