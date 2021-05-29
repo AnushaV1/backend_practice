@@ -105,15 +105,28 @@ def show_all_users():
 @app.route("/user/<int:user_id>", methods=["PATCH"])
 def update_single_user(user_id):
     """Update user with id"""
-    user = backup_user_to_version(user_id)
-    user.firstname = request.json.get('firstname',user.firstname)
-    user.middlename = request.json.get('middlename',user.middlename)
-    user.lastname = request.json.get('lastname', user.lastname)
-    user.email = request.json.get('email', user.email)
-    user.age = request.json.get('age', user.age)
-    user.version_id = int(user.version_id) + 1    
-    db.session.commit()
-    return (jsonify(user=user.serialize_user()), 200)
+    flag = False
+    user1 = User.query.get_or_404(user_id)
+    user = user1.serialize_user()
+    del user["id"]
+    del user["version_id"]
+    
+    for key, val in user.items():
+        if user[key] != request.json.get(key,user[key]):
+            flag = True
+
+    if flag: 
+        user = backup_user_to_version(user_id)    
+        user.firstname = request.json.get('firstname',user.firstname)
+        user.middlename = request.json.get('middlename',user.middlename)
+        user.lastname = request.json.get('lastname', user.lastname)
+        user.email = request.json.get('email', user.email)
+        user.age = request.json.get('age', user.age)
+        user.version_id = int(user.version_id) + 1    
+        db.session.commit()    
+        return (jsonify(user=user.serialize_user()), 200)
+    else:
+        return make_response(jsonify({"message": "No change in data"}), 400) 
 
 
 @app.route("/user/<int:user_id>", methods=["DELETE"])

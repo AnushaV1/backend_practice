@@ -6,13 +6,13 @@ Content-Type: application/json
     "firstname":"Allen",
     "middlename":"",
     "lastname":"Peter",
-    "email":"allen@email.com",
+    "email":"allen1@email.com",
     "age":35,
     "version_id":1
 }
 
 ### Single Read with user id
-GET http://127.0.0.1:5000/user/9
+GET http://127.0.0.1:5000/user/3
 
 Content-Type: application/json
 
@@ -25,12 +25,15 @@ GET http://127.0.0.1:5000/users
 Content-Type: application/json
 
 ### update
-PATCH http://127.0.0.1:5000/user/17
+PATCH http://127.0.0.1:5000/user/2
 Content-Type: application/json
 
 {
-"middlename": "Michelle"
+"middlename": "Mark"
 }
+
+
+
 
 ###
 DELETE http://127.0.0.1:5000/user/17
